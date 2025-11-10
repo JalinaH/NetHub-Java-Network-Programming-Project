@@ -558,17 +558,6 @@ kill -9 <PID>
 
 **Solution:** Already handled - all network ops run in background threads with `Platform.runLater()`
 
-## 📚 Documentation
-
-Additional documentation available:
-
-- **PROJECT_SUMMARY.md** - Comprehensive technical overview
-- **QUICKSTART.md** - Quick start guide for beginners
-- **CLIENT_README.md** - Client-specific documentation
-- **TCP_MULTITHREADING_README.md** - TCP and threading details
-- **COMPLETE_IMPLEMENTATION_README.md** - UDP and NIO details
-- **LINKCHECKER_README.md** - Link checker utility docs
-
 ## 🎓 Learning Outcomes
 
 This project demonstrates:
