@@ -596,25 +596,6 @@ This project demonstrates:
 - [ ] Unit and integration tests
 - [ ] Load balancing for multiple servers
 - [ ] Configuration files for server settings
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- **IN3111 Course Instructors** - For project guidance
-- **Java Documentation** - Comprehensive API references
-- **JavaFX Community** - UI framework support
-- **Maven Central** - Dependency management
-
-## 📧 Contact
-
-For questions or issues:
-- **Repository:** [Simple-Service-Hub](https://github.com/JalinaH/Simple-Service-Hub)
-- **Branch:** dev-jalina
-- **Course:** IN3111 - Network Programming
-
 ---
 
 **Built with ❤️ using Java, JavaFX, and Maven**
