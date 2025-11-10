@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.client.controller.MainController" spacing="10" style="-fx-background-color: #f4f4f4;">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+    
+    <!-- Header -->
+    <HBox alignment="CENTER" style="-fx-background-color: #2c3e50; -fx-background-radius: 5;">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+        <Label text="NetHub Client - Network Programming" textFill="white">
+            <font>
+                <Font name="System Bold" size="24"/>
+            </font>
+        </Label>
+    </HBox>
+    
+    <!-- Tab Pane -->
+    <TabPane VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+        
+        <!-- TCP Chat Tab -->
+        <Tab text="TCP Chat">
+            <VBox spacing="10" style="-fx-background-color: white;">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <!-- Connection Panel -->
+                <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Label text="Username:"/>
+                    <TextField fx:id="tcpUsernameField" promptText="Enter your username" prefWidth="200"/>
+                    <Button fx:id="tcpConnectBtn" text="Connect" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="tcpStatusLabel" text="Status: Disconnected"/>
+                </HBox>
+                
+                <!-- Chat Area -->
+                <TextArea fx:id="tcpChatArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" 
+                          style="-fx-control-inner-background: #fafafa; -fx-font-family: 'Courier New';" 
+                          promptText="Chat messages will appear here..."/>
+                
+                <!-- Message Input -->
+                <HBox spacing="10">
+                    <TextField fx:id="tcpMessageField" promptText="Type your message..." HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="tcpSendBtn" text="Send" prefWidth="80" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+        </Tab>
+        
+        <!-- UDP Health Tab -->
+        <Tab text="UDP Health">
+            <VBox spacing="10" style="-fx-background-color: white;">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <!-- Control Panel -->
+                <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Button fx:id="udpInitBtn" text="Initialize" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                    <Separator orientation="VERTICAL"/>
+                    <Button fx:id="udpPingBtn" text="PING" prefWidth="80" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                    <Button fx:id="udpStatusBtn" text="STATUS" prefWidth="80" style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+                    <Button fx:id="udpInfoBtn" text="INFO" prefWidth="80" style="-fx-background-color: #e67e22; -fx-text-fill: white;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="udpStatusLabel" text="Status: Not initialized"/>
+                </HBox>
+                
+                <!-- Response Area -->
+                <Label text="Server Responses:">
+                    <font>
+                        <Font name="System Bold" size="12"/>
+                    </font>
+                </Label>
+                <TextArea fx:id="udpResponseArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" 
+                          style="-fx-control-inner-background: #fafafa; -fx-font-family: 'Courier New';" 
+                          promptText="UDP responses will appear here..."/>
+            </VBox>
+        </Tab>
+        
+        <!-- NIO File Transfer Tab -->
+        <Tab text="NIO File Transfer">
+            <VBox spacing="10" style="-fx-background-color: white;">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <!-- Connection Panel -->
+                <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Button fx:id="nioConnectBtn" text="Connect" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                    <Button fx:id="nioListBtn" text="List Files" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="nioStatusLabel" text="Status: Disconnected"/>
+                </HBox>
+                
+                <!-- File List Area -->
+                <Label text="Available Files:">
+                    <font>
+                        <Font name="System Bold" size="12"/>
+                    </font>
+                </Label>
+                <TextArea fx:id="nioFileListArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" 
+                          style="-fx-control-inner-background: #fafafa; -fx-font-family: 'Courier New';" 
+                          promptText="File list will appear here..."/>
+                
+                <!-- Download Panel -->
+                <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Label text="Filename:"/>
+                    <TextField fx:id="nioFilenameField" promptText="Enter filename to download" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="nioDownloadBtn" text="Download" prefWidth="100" style="-fx-background-color: #e67e22; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+        </Tab>
+        
+        <!-- Link Checker Tab -->
+        <Tab text="Link Checker">
+            <VBox spacing="10" style="-fx-background-color: white;">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <!-- URL Input Panel -->
+                <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Label text="URL:"/>
+                    <TextField fx:id="linkUrlField" promptText="Enter URL (e.g., https://www.google.com)" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="linkCheckBtn" text="Check Link" prefWidth="100" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                </HBox>
+                
+                <!-- Instructions -->
+                <VBox spacing="5" style="-fx-background-color: #e8f4f8; -fx-padding: 10; -fx-background-radius: 5;">
+                    <Label text="Link Checker - URL Validation using HttpURLConnection">
+                        <font>
+                            <Font name="System Bold" size="12"/>
+                        </font>
+                    </Label>
+                    <Label text="• Checks HTTP status codes (200 = OK, 404 = Not Found, etc.)" style="-fx-text-fill: #555;"/>
+                    <Label text="• Validates URL format and accessibility" style="-fx-text-fill: #555;"/>
+                    <Label text="• Measures response time" style="-fx-text-fill: #555;"/>
+                </VBox>
+                
+                <!-- Results Area -->
+                <Label text="Check Results:">
+                    <font>
+                        <Font name="System Bold" size="12"/>
+                    </font>
+                </Label>
+                <TextArea fx:id="linkResultArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" 
+                          style="-fx-control-inner-background: #fafafa; -fx-font-family: 'Courier New';" 
+                          promptText="Link check results will appear here..."/>
+            </VBox>
+        </Tab>
+        
+    </TabPane>
+    
+    <!-- Footer -->
+    <HBox alignment="CENTER" style="-fx-background-color: #34495e; -fx-background-radius: 5;">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Label text="Network Programming Assignment | TCP (5000) | NIO (5001) | UDP (5002)" textFill="white">
+            <font>
+                <Font size="11"/>
+            </font>
+        </Label>
+    </HBox>
+</VBox>
